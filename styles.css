@@ -61,7 +61,7 @@ img {
 /* Music notes in light mode */
 body.switch .music1-image, 
 body.switch .music2-image {
-    filter: brightness(0) invert(0%); /* Change the color of the music notes */
+    filter: brightness(0) invert(0%); 
 }
 
 body.switch .header-image {
@@ -73,7 +73,7 @@ body {
     background-color: rgb(20, 20, 20);
     color: rgb(235, 235, 235);
     transition: all 2s;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Atkinson Hyperlegible Mono", sans-serif;
 }
 
 body.switch {
@@ -93,7 +93,7 @@ body.switch {
 header {
     text-align: left;
     padding: 20px;
-    max-width: 1366px; /* Ensures it aligns with sections */
+    max-width: 1366px;
 }
 
 #banner {
@@ -110,6 +110,7 @@ header {
 
 #banner.switch {
     box-shadow: none;
+    border: .5px #4883e2 solid;
 }
 
 h1 {
@@ -135,6 +136,7 @@ h2 {
     margin-top: 0;
     line-height: 1.5em;
     font-size: 20px;
+    text-transform: uppercase;
 }
 
 h3 {
@@ -160,7 +162,7 @@ main {
 
 main section {
     flex: 1;
-    border: .5px rgb(98, 45, 45)solid; 
+    border: .5px #e8253c solid; 
     margin: 3em .5em;
     padding: 1em;
     /* background-color: #242020; */
@@ -169,9 +171,9 @@ main section {
 }
 
 main section.switch {
-    border: .5px black solid; 
+    border: .5px #4883e2 solid; 
     background-color: white;
-    box-shadow: none;
+    box-shadow: 10px 10px 64px -25px rgb(105, 187, 255);
 }
 
 a {
@@ -194,10 +196,12 @@ section a {
     display: inline-block;
     padding: .5em;
     color: #e8253c;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
 section a:hover {
-    background-color: #4883e2;
+    background-color: red;
     color: #333;
 }
 
@@ -212,13 +216,14 @@ section.switch a:hover {
 
 button {
     position: absolute;
-    top: 80px;
+    top: 70px;
     left: 390px;
     padding: 0;
     border: none; 
     background: none; 
     cursor: pointer;
     color: red;
+    text-transform: uppercase;
 }
 
 button img {
