@@ -78,9 +78,18 @@ img {
     filter: brightness(0) invert(100%);
 }
 
+.treble-image {
+    position: absolute; 
+    transform: translateY(170%) translateX(770%); 
+    height: 160px; 
+    z-index: 3; 
+    filter: brightness(0) invert(100%);
+}
+
 /* Music notes in light mode */
 body.switch .music1-image, 
-body.switch .music2-image {
+body.switch .music2-image,
+body.switch .treble-image {
     filter: brightness(0) invert(0%); 
 }
 
