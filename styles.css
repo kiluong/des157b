@@ -9,12 +9,71 @@ img {
     height: auto;
 }
 
+/* Image styling */
+@keyframes rotateImage {
+    from {
+        transform: translateY(-80%) translateX(180%) rotate(0deg);
+    }
+    to {
+        transform: translateY(-80%) translateX(180%) rotate(360deg);
+    }
+}
+
+.header-image {
+    position: absolute; 
+    transform: translateY(-80%) translateX(180%); 
+    height: 500px; 
+    z-index: 2; 
+    animation: rotateImage 5s linear infinite; 
+}
+
+
+.necklace-image {
+    position: absolute; 
+    transform: translateY(-100%) translateX(220%); 
+    height: 300px; 
+    z-index: 2; 
+}
+
+.header3-image {
+    position: absolute; 
+    transform: translateY(-80%) translateX(150%); 
+    height: 400px; 
+    z-index: 1; 
+}
+
+.music1-image {
+    position: absolute; 
+    transform: translateY(80%) translateX(0%); 
+    height: 70px; 
+    z-index: 3; 
+    filter: brightness(0) invert(100%);
+}
+
+.music2-image {
+    position: absolute; 
+    transform: translateY(400%) translateX(1200%); 
+    height: 100px; 
+    z-index: 3; 
+    filter: brightness(0) invert(100%);
+}
+
+/* Music notes in light mode */
+body.switch .music1-image, 
+body.switch .music2-image {
+    filter: brightness(0) invert(0%); /* Change the color of the music notes */
+}
+
+body.switch .header-image {
+    filter: hue-rotate(220deg); 
+}
+
 /* Page styling */
 body {
-    background-color: #333;
+    background-color: rgb(20, 20, 20);
     color: rgb(235, 235, 235);
     transition: all 2s;
-    font-family: "Red Hat Text", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body.switch {
@@ -29,21 +88,41 @@ body.switch {
     /* make sure the columns don't get too small and text stays readable */
     min-width: 900px;
     margin: 1em auto;
-    padding-top: 2em;
 }
 
 header {
-    margin: 0 auto 2em auto;
+    text-align: left;
+    padding: 20px;
+    max-width: 1366px; /* Ensures it aligns with sections */
+}
+
+#banner {
+    justify-content: flex-start;
+    padding-left: 2.5em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: .5px rgb(98, 45, 45)solid; 
+    border-radius: 10px;
+    box-shadow: 10px 10px 64px -25px rgba(255,0,0,1);
+}
+
+#banner.switch {
+    box-shadow: none;
 }
 
 h1 {
     font-family: "UnifrakturMaguntia", cursive;
     font-size: 70px;
     font-weight: 100;
+    color: white;
+
 }
 
 body.switch h1 {
     font-family: "Ballet", sans-serif;
+    color: black;
 }
 
 body.switch h3 {
@@ -53,7 +132,9 @@ body.switch h3 {
 
 h2 {
     font-weight: 10;
-    padding: -50px;
+    margin-top: 0;
+    line-height: 1.5em;
+    font-size: 20px;
 }
 
 h3 {
@@ -61,24 +142,12 @@ h3 {
     font-size: 30px;
     font-weight: 70;
     color: white;
-}
-
-
-#banner {
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 250px;
-    margin: auto;
-    /* background-color: rgb(235, 235, 235); */
-    color: white;
-    overflow: hidden;
-    display: grid;
-	place-items: center;
+    padding-left: 1em;
+    margin-bottom: 0.2em; 
 }
 
 #banner.switch {
-    /* background-color: #333; */
+    background-color: white;
     color: black;
     transition: all 2s;
 }
@@ -86,18 +155,23 @@ h3 {
 main {
     display: flex;
     justify-content: space-evenly;
-    margin: 1em auto;
+    margin: .8em;
 }
 
 main section {
     flex: 1;
-    border: .5px #ff001e solid; 
-    margin: 0 .25em;
-    padding: 2em;
+    border: .5px rgb(98, 45, 45)solid; 
+    margin: 3em .5em;
+    padding: 1em;
+    /* background-color: #242020; */
+    border-radius: 10px;
+    box-shadow: 10px 10px 64px -25px rgba(255,0,0,1);
 }
 
 main section.switch {
     border: .5px black solid; 
+    background-color: white;
+    box-shadow: none;
 }
 
 a {
@@ -108,54 +182,66 @@ nav ol, nav ul {
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
+    margin-top: 0;
 }
 
 section li {
-    padding-left: 1.2em;
+    padding-left: 1.4em;
 }
 
 section a {
     line-height: 1.1em;
     display: inline-block;
     padding: .5em;
-    color: #ff001e;
+    color: #e8253c;
 }
 
 section a:hover {
-    background-color: #adcdff;
+    background-color: #4883e2;
     color: #333;
 }
 
 section.switch a {
-    color: #333;
+    color: #4883e2;
 }
 
 section.switch a:hover {
-    background-color: #333;
+    background-color: #4883e2;
     color: rgb(235, 235, 235);
 }
 
 button {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 12px;
-    background-color: #adcdff;
-    color: #333;
-    border: 1px solid transparent;
+    top: 80px;
+    left: 390px;
+    padding: 0;
+    border: none; 
+    background: none; 
+    cursor: pointer;
+    color: red;
+}
+
+button img {
+    display: block; 
+    filter: brightness(0) saturate(100%) invert(17%) sepia(91%) saturate(7494%) hue-rotate(1deg) brightness(103%) contrast(116%);
 }
 
 button:hover {
-    background-color: blue;
     cursor: pointer;
+    filter: brightness(0) invert(100%);
+    color: white;
 }
 
 button.switch {
-    background-color: rgb(235, 235, 235);
-    border-color: #333;
+    color: #4883e2;
+    
 }
 
 button.switch:hover {
-    background-color: #333;
-    color: rgb(235, 235, 235)
+    filter: brightness(0) invert(0%);
+    color: black;
+}
+
+button.switch img {
+    filter: brightness(0) saturate(100%) invert(22%) sepia(91%) saturate(7494%) hue-rotate(190deg) brightness(103%) contrast(116%);
 }
