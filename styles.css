@@ -27,13 +27,36 @@ img {
     animation: rotateImage 5s linear infinite; 
 }
 
-
-.necklace-image {
+@keyframes swingNecklace {
+    0% {
+      transform: translateY(-100%) translateX(220%) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-100%) translateX(220%) rotate(10deg);
+    }
+    50% {
+      transform: translateY(-100%) translateX(220%) rotate(0deg);
+    }
+    75% {
+      transform: translateY(-100%) translateX(220%) rotate(-10deg);
+    }
+    100% {
+      transform: translateY(-100%) translateX(220%) rotate(0deg);
+    }
+  }
+  
+  .necklace-image {
     position: absolute; 
     transform: translateY(-100%) translateX(220%); 
     height: 300px; 
-    z-index: 2; 
-}
+    z-index: 2;
+    transform-origin: top center;
+    transition: transform 0.3s ease;
+  }
+  
+  .necklace-image:hover {
+    animation: swingNecklace 2s ease-in-out;
+  }
 
 .header3-image {
     position: absolute; 
