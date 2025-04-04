@@ -140,6 +140,9 @@ header {
 #banner.switch {
     box-shadow: none;
     border: .5px #4883e2 solid;
+    background-color: white;
+    color: black;
+    transition: all 2s;
 }
 
 h1 {
@@ -175,12 +178,6 @@ h3 {
     color: white;
     padding-left: 1em;
     margin-bottom: 0.2em; 
-}
-
-#banner.switch {
-    background-color: white;
-    color: black;
-    transition: all 2s;
 }
 
 main {
