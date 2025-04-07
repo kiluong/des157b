@@ -49,7 +49,6 @@
         }
     }
 
-    // Function to initialize the page
     function initializePage() {
         console.log("Initializing page")
         playAudio(darkAudio) 
