@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @font-face {
+    font-family: "Swiss911";
+    src: url("./fonts/Swiss911.ttf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  body {
+    font-family: "Swiss911", Arial, sans-serif;
+    color: white;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  #myVideo {
+    z-index: -1;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    filter: grayscale(100%);
+  }
+  
+  .fa-expand {
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .fa-expand:hover {
+    cursor: pointer;
+  }
+  
+  #poem p {
+    pointer-events: none;
+    position: absolute;
+    padding: 2rem;
+    font-size: 50rem; 
+    transition: all .2s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black; 
+    background-color: white;
+    filter: invert(100%) hue-rotate(180deg) saturate(200%); 
+    mix-blend-mode: difference; 
+    z-index: 10; 
+  }
+  
+  /* Keep your existing hidden/showing classes */
+  .hidden {
+    opacity: 0;
+  }
+  
+  .showing {
+    opacity: 1;
+  }
+  
