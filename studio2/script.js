@@ -30,7 +30,7 @@ async function loadMusicData() {
         bar.className = 'bar';
         bar.style.height = `${parseFloat(item.percentage) * 3}px`;
         
-        // 🎨 Assign a different color per bar
+        // different color per bar
         bar.style.backgroundColor = colors[index % colors.length];
   
         const percentLabel = document.createElement('div');

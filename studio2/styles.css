@@ -72,7 +72,7 @@ main {
   position: absolute;
   bottom: 100%; 
   font-size: 12px;
-  font-weight: bold;
+
   margin-bottom: 5px;
   color: #333;
   pointer-events: none;
@@ -86,26 +86,10 @@ main {
   font-weight: bold;
 }
 
-
 /* Footer */
 footer {
   text-align: center;
   font-size: 0.9rem;
   color: #777;
   margin-top: 40px;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .bar-graph {
-    gap: 10px;
-  }
-
-  .bar {
-    width: 30px;
-  }
-
-  .label {
-    font-size: 10px;
-  }
 }
