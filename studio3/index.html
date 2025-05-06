@@ -3,25 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Music Genre Bar Graph</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <title>Spotify Wrapped</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>🎵 Music Genre Tracker</h1>
-    <p>Last month — a snapshot of my music moods.</p>
+    <h1>🎵 My 2024 Wrapped</h1>
+    <p>2024 in music</p>
   </header>
 
   <main>
-    <div class="chart-wrapper">
-      <div class="bar-graph"></div>
-    </div>
+    <!-- Top Artists Section -->
+    <section class="section-artists" data-aos="fade-right">
+      <div class="section-inner">
+        <h2>Top Artists</h2>
+        <div class="content-wrapper">
+          <div class="chart-container">
+            <canvas id="artistChart"></canvas>
+          </div>
+          <div class="list-container">
+            <ul id="artistList" class="artist-list">
+              <!-- JS -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Genres Section -->
+    <section class="section-genres" data-aos="fade-left" data-aos-delay="300">
+      <div class="section-inner">
+        <h2>Top Genres</h2>
+        <div class="content-wrapper">
+          <div class="list-container">
+            <ul id="genreList" class="genre-list">
+              <!-- JS -->
+            </ul>
+          </div>
+          <div class="chart-container">
+            <canvas id="genreChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Song Section -->
+    <section class="section-song" data-aos="fade-up" data-aos-delay="600">
+      <div class="section-inner">
+        <h2>Most Played Song</h2>
+        <div class="song-container">
+          <p class="minutes-listened"><span id="minutesListened"></span> minutes listened</p>
+          <div class="album-cover">
+            <img src="image/bladee.jpeg" alt="bladee">
+          </div>
+          <h3 id="songTitle"></h3>
+          <p id="songArtists" class="song-artists"></p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>DES157B Studio 2 — Personal Data Interface</p>
+    <p>My 2024 Wrapped — A snapshot of your music journey</p>
   </footer>
 
+  <!-- External libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Your script -->
   <script src="script.js"></script>
 </body>
 </html>

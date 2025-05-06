@@ -1,0 +1,18 @@
+{
+    "topArtists": [
+      { "name": "Bladee", "playCount": 1250 },
+      { "name": "Destroy Lonely", "playCount": 980 },
+      { "name": "Summer Walker", "playCount": 820 }
+    ],
+    "topGenres": [
+      { "name": "Cloud Rap", "hours": 145 },
+      { "name": "Underground Hip Hop", "hours": 120 },
+      { "name": "R&B", "hours": 95 }
+    ],
+    "topSong": {
+      "title": "Girls Just Want To Have Fun",
+      "artists": "Bladee, Ecco2k",
+      "minutesListened": 9000
+    }
+  }
+  

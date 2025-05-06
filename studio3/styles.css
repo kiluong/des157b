@@ -1,95 +1,184 @@
-/* Base styles */
+/* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #f7f7f7;
-    color: #333;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  h1 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    font-size: 1rem;
-  }
-  
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .chart-wrapper {
-    width: 100%;
-    max-width: 800px;
-    padding: 20px;
-  }
-  
-  /* Bar Graph */
-  .bar-graph {
-    display: flex;
-    align-items: flex-end;
-    gap: 20px;
-    height: 300px;
-    width: 100%;
-    position: relative;
-  }
-  
-  .bar {
-    position: relative;
-    width: 50px;
-    background-color: #4266D8;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .bar:hover {
-    background-color: #314bbf;
-  }
-  
-  .percent-label {
-    position: absolute;
-    bottom: 100%; 
-    font-size: 12px;
-  
-    margin-bottom: 5px;
-    color: #333;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  
-  .label {
-    text-align: center;
-    margin-top: 8px;
-    font-size: 12px;
-    font-weight: bold;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #777;
-    margin-top: 40px;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #222;
+  line-height: 1.6;
+  padding-bottom: 4rem;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  color: #111;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* Sections */
+section {
+  padding: 4rem 2rem;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-inner h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Content wrappers */
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Specific alignments */
+.section-artists .content-wrapper {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.section-genres .content-wrapper {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Chart & List containers */
+.chart-container,
+.list-container {
+  flex: 1 1 300px;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+/* Lists */
+.artist-list,
+.genre-list {
+  list-style: none;
+  padding: 0;
+}
+
+.artist-list li,
+.genre-list li {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* List item content */
+.rank {
+  font-weight: bold;
+  color: #1a73e8;
+  font-size: 1.2rem;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.item-name {
+  font-weight: 600;
+}
+
+.item-stat {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Song section */
+.section-song {
+  text-align: center;
+}
+
+.song-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.album-cover {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.album-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid black;
+  display: block;
+}
+
+.minutes-listened {
+  font-size: 1.2rem;
+  color: #1a73e8;
+  margin-bottom: 1rem;
+}
+
+#songTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.song-artists {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  background-color: #f9f9f9;
+  color: #555;
+}
+
+/* AOS animation */
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
