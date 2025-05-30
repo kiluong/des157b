@@ -145,3 +145,48 @@ footer {
   border-top: 1px solid #aaa;
   background: white; 
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.overlay-content {
+  background: white;
+  padding: 30px;
+  border: 2px solid black;
+  text-align: left;
+  font-family: 'Silkscreen', monospace;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.overlay-content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.overlay-content ul {
+  font-size: 0.9rem;
+  padding-left: 20px;
+}
+
+.overlay-content button {
+  margin-top: 20px;
+  padding: 8px 16px;
+  border: 2px solid black;
+  background: black;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
