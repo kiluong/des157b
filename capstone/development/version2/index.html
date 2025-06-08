@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fast Fashion Avatar</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <header>YOUR FAVORITE FAST FASHION BRAND!!!</header>
+
+  <div class="product-container">
+    <div class="product-image">
+      <img src="https://via.placeholder.com/500x600?text=Faux+Fur+Coat" alt="Faux Fur Coat">
+    </div>
+
+    <div class="product-info">
+
+      <h1 class="product-title">Faux Fur Coat</h1>
+      <p class="product-price">$29.99</p>
+      <p class="product-description">
+        Stay warm and stylish with our luxurious faux fur coat. Perfect for layering during colder months. 
+        Made with premium synthetic materials for ultimate comfort.
+      </p>
+
+      <!-- Production & Labor Conditions -->
+      <div class="section" data-aos="fade-up">
+        <h3>PRODUCTION & LABOR CONDITIONS</h3>
+        <p>
+          This coat is manufactured in factories across China, Indonesia, and Dhaka, Bangladesh. Workers often earn as little as <strong>$68/month</strong>—about <strong>$2.27/day</strong>—while working <strong>14–16 hour shifts</strong> in poorly ventilated conditions, exposed to harmful chemicals and unsafe environments.
+        </p>
+        <p>
+          Despite the massive profits of the fashion industry, <strong>less than 2% of garment workers worldwide earn a living wage</strong>.
+        </p>
+      </div>
+
+      <!-- Materials & Chemicals -->
+      <div class="section" data-aos="fade-up">
+        <h3>MATERIALS & CHEMICALS</h3>
+        <canvas id="materialsChart"></canvas>
+        <p>
+          This faux fur coat is made from a synthetic blend of <strong>85% polyester</strong>, <strong>10% acrylic</strong>, and <strong>5% other synthetics</strong>—all derived from petroleum.
+          These fabrics are <strong>non-biodegradable</strong> and shed up to <strong>700,000 microplastic fibers</strong> per wash cycle.
+        </p>
+        <p>
+          Chemical treatments include <strong>formaldehyde-based resins</strong>, <strong>azo dyes</strong>, and <strong>flame retardants</strong>—linked to skin irritation, respiratory issues, and long-term health risks.
+        </p>
+        <p><strong>Textile dyeing is the second-largest water polluter globally.</strong></p>
+      </div>
+
+      <!-- Environmental Impact -->
+      <div class="section" data-aos="fade-up">
+        <h3>ENVIRONMENTAL IMPACT</h3>
+        <ul>
+          <li>Production consumes over <strong>2,000 liters of water</strong> (equivalent to 3 years of drinking water)</li>
+          <li>Generates <strong>15.2 kg of CO₂ emissions</strong> (similar to driving 68 km)</li>
+          <li>Shipped 8,500 miles by cargo ship and truck, adding <strong>5.2 kg of CO₂</strong> per garment</li>
+          <li><strong>92 million tons</strong> of textile waste are generated annually</li>
+        </ul>
+        <p><strong>Fashion contributes 10% of global CO₂ emissions and more than international flights + maritime shipping combined.</strong></p>
+      </div>
+
+      <!-- Waste & Lifespan -->
+      <div class="section" data-aos="fade-up">
+        <h3>WASTE & LIFESPAN</h3>
+        <p>
+          The average fast fashion item is worn only <strong>7–10 times</strong> before being discarded. This polyester-based coat will take over <strong>200 years to decompose</strong> in a landfill.
+        </p>
+        <p><strong>💡 Consumers today buy 60% more clothing but keep them for half as long as 15 years ago.</strong></p>
+      </div>
+
+      <!-- True Cost Breakdown -->
+      <div class="section" data-aos="fade-up">
+        <h3>TRUE COST BREAKDOWN</h3>
+        <div class="cost-breakdown">
+          <div class="cost-row">
+            <span>Listed Price:</span>
+            <span>$29.99</span>
+          </div>
+          <div class="cost-row ethical-cost">
+            <span>Environmental Cost:</span>
+            <span>+$18.50</span>
+          </div>
+          <div class="cost-row ethical-cost">
+            <span>Fair Labor Cost:</span>
+            <span>+$15.75</span>
+          </div>
+          <div class="cost-row ethical-cost">
+            <span>Health Impact Cost:</span>
+            <span>+$12.25</span>
+          </div>
+          <div class="cost-row total">
+            <span>Real Cost:</span>
+            <span class="real-cost">$76.49</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ready to Buy -->
+      <div class="section" data-aos="fade-up">
+        <h3>🛒 READY TO BUY?</h3>
+        <p>
+          This coat may look like a great deal, but the true cost is paid by garment workers, the environment, and your future. 
+          Are you still ready to add it to your cart?
+        </p>
+      </div>
+
+      <!-- Trade-Off Comparator -->
+      <div class="section" data-aos="fade-up">
+        <h3>🔍 COMPARE YOUR PRIORITIES</h3>
+        <p>Select two fashion values to compare:</p>
+
+        <div class="dropdown-compare">
+          <label for="factorA">I want more:</label>
+          <select id="factorA">
+            <option value="quantity">Quantity</option>
+            <option value="ethics">Ethical Production</option>
+            <option value="price">Low Price</option>
+            <option value="quality">High Quality</option>
+            <option value="materials">Sustainable Materials</option>
+            <option value="trend">Trendiness</option>
+          </select>
+
+          <label for="factorB">and also:</label>
+          <select id="factorB">
+            <!-- dynamically updated by JS -->
+          </select>
+        </div>
+
+        <p id="comparisonSummary" class="comparison-summary"></p>
+      </div>
+
+      </div>
+  </div>
+
+  <footer>
+    <span>MADE BY KIM</span> | <span>DES 157 – CAPSTONE PROJECT</span> | <span>SPRING 2025</span>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: white;
+  color: #222;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Header */
+header {
+  font-size: 1.5rem;
+  width: 100%;
+  background: white;
+  padding: 20px 0;
+  text-align: center;
+  letter-spacing: 2px;
+  z-index: 1000;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-top: 1px solid #aaa;
+  background: white;
+}
+
+/* Product Layout */
+.product-container {
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.product-image {
+  width: 50%;
+  padding-right: 40px;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-info {
+  width: 50%;
+}
+
+/* Text Styling */
+.product-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.product-description {
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Scroll Wrapper for Sections */
+.scroll-wrapper {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Section Styling with Snap + AOS */
+.section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.section.aos-animate {
+  opacity: 1;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Chart Styling */
+canvas {
+  margin: 5px 0 10px 0;
+  max-width: 300px;
+}
+
+/* Cost Breakdown Styling */
+.cost-breakdown {
+  font-size: 1rem;
+}
+
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.ethical-cost {
+  color: #e53e3e;
+}
+
+.real-cost {
+  font-weight: bold;
+  color: #b91c1c;
+}
+
+/* Utility Classes */
+.mt-2 {
+  margin-top: 15px;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .product-image,
+  .product-info {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .product-image {
+    margin-bottom: 30px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+}
+.dropdown-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+.dropdown-compare select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.comparison-summary {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: #f3f4f6;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem;
+  max-width: 600px;
+}
