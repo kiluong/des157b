@@ -294,7 +294,7 @@ canvas {
   cursor: pointer;
   font-weight: bold;
   position: relative;
-  color: #3b82f6;
+  color: #e53e3e;
 }
 
 .tooltip-icon::after {
