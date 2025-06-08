@@ -37,73 +37,75 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const options = [
-  { value: "quantity", label: "Quantity" },
-  { value: "ethics", label: "Ethical Production" },
-  { value: "price", label: "Low Price" },
-  { value: "quality", label: "High Quality" },
-  { value: "materials", label: "Sustainable Materials" },
-  { value: "trend", label: "Trendiness" }
-];
+    const options = [
+    { value: "quantity", label: "Quantity" },
+    { value: "ethics", label: "Ethical Production" },
+    { value: "price", label: "Low Price" },
+    { value: "quality", label: "High Quality" },
+    { value: "materials", label: "Sustainable Materials" },
+    { value: "trend", label: "Trendiness" }
+  ];
 
-const comparisons = {
-  "quantity-ethics": "More quantity and ethical production often lead to higher prices or reduced quality.",
-  "price-quality": "It's tough to get both low prices and high quality — one usually compromises the other.",
-  "materials-trend": "Trendy designs and sustainable materials don’t often align due to cost and production time.",
-  "ethics-trend": "Fashion that is trendy and ethical is rare — fast fashion trends often come with poor labor practices.",
-  "materials-price": "Sustainable materials tend to raise production costs compared to synthetics.",
-  "quantity-quality": "More quantity often comes at the cost of lower quality and faster wear.",
-  "ethics-price": "Ethical labor usually raises production costs, making extremely low prices unrealistic.",
-  "trend-quality": "Trendy clothes aren't always made to last — quality may take a hit.",
-  "materials-quantity": "A large wardrobe made with eco-friendly materials gets expensive fast.",
-  "quality-ethics": "High-quality, ethically made pieces offer longevity but usually come with a higher price tag."
-};
+  const comparisons = {
+    "quantity-ethics": "Choosing more quantity and ethical production increases costs and may reduce quality.",
+    "ethics-quantity": "Choosing ethical production and more quantity often means higher prices or lower-quality materials.",
+    "price-quality": "Lower price and higher quality are difficult to achieve together — you'll likely compromise on ethics or sustainability.",
+    "quality-materials": "High quality and sustainable materials result in longer lifespan but come at a higher price.",
+    "trend-ethics": "Staying trendy and ethical is tough — fast fashion usually sacrifices fair labor.",
+    "price-ethics": "A low price and ethical production rarely go hand-in-hand — you may need to sacrifice quantity or trendiness.",
+    "materials-quantity": "Wanting lots of items made from sustainable materials raises cost and lowers accessibility.",
+    "trend-quality": "Trendy clothes aren't always built to last — high quality may mean less trend responsiveness.",
+    "materials-price": "Eco-friendly materials often raise prices compared to synthetic alternatives.",
+    "quantity-trend": "High quantity and trendiness can drive waste and unsustainable consumption habits."
+  };
 
-const factorA = document.getElementById("factorA");
-const factorB = document.getElementById("factorB");
-const summary = document.getElementById("comparisonSummary");
+  const factorA = document.getElementById("factorA");
+  const factorB = document.getElementById("factorB");
+  const summary = document.getElementById("comparisonSummary");
 
-function populateFactorB(excludeValue) {
-  factorB.innerHTML = "";
-  options.forEach(opt => {
-    if (opt.value !== excludeValue) {
-      const option = document.createElement("option");
-      option.value = opt.value;
-      option.textContent = opt.label;
-      factorB.appendChild(option);
-    }
-  });
-}
+  function populateFactorB(excludeValue) {
+    // Clear all options
+    factorB.innerHTML = "";
 
-function updateComparison() {
-  const a = factorA.value;
-  const b = factorB.value;
-  const key = `${a}-${b}`;
-  const reverseKey = `${b}-${a}`;
-
-  if (a === b) {
-    summary.textContent = "Please select two different values to compare.";
-  } else if (comparisons[key]) {
-    summary.textContent = comparisons[key];
-  } else if (comparisons[reverseKey]) {
-    summary.textContent = comparisons[reverseKey];
-  } else {
-    summary.textContent = `Balancing ${a} and ${b} usually means trade-offs in other areas like cost, sustainability, or durability.`;
+    options.forEach(opt => {
+      if (opt.value !== excludeValue) {
+        const option = document.createElement("option");
+        option.value = opt.value;
+        option.textContent = opt.label;
+        factorB.appendChild(option);
+      }
+    });
   }
-}
 
-// When A changes, repopulate B and update
-factorA.addEventListener("change", () => {
+  function updateComparison() {
+    const a = factorA.value;
+    const b = factorB.value;
+    const key = `${a}-${b}`;
+    const reverseKey = `${b}-${a}`;
+
+    if (a === b) {
+      summary.textContent = "Please select two different values to compare.";
+    } else if (comparisons[key]) {
+      summary.textContent = comparisons[key];
+    } else if (comparisons[reverseKey]) {
+      summary.textContent = comparisons[reverseKey];
+    } else {
+      summary.textContent = "This combination is complex — you'll likely have to compromise on other values like cost or sustainability.";
+    }
+  }
+
+  // When dropdown A changes, update B’s options and run comparison
+  factorA.addEventListener("change", () => {
+    populateFactorB(factorA.value);
+    updateComparison();
+  });
+
+  // When dropdown B changes, run comparison
+  factorB.addEventListener("change", updateComparison);
+
+  // Initial setup
   populateFactorB(factorA.value);
   updateComparison();
-});
-
-// When B changes, just update summary
-factorB.addEventListener("change", updateComparison);
-
-// Initial setup
-populateFactorB(factorA.value);
-updateComparison();
 
 
 

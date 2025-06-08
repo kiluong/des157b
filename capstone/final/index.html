@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Favorite Fast Fashion Brand</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">Your Favorite Fast Fashion Brand</div>
+    <nav class="nav-links">
+      <a href="#">Shop</a>
+      <a href="#">Sustainability</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+
+  <div class="product-container">
+    <div class="product-image">
+      <img src="images/1.jpg" alt="Faux Fur Coat">
+      <img src="images/2.jpg" alt="Faux Fur Coat 2">
+      <img src="images/3.jpg" alt="Faux Fur Coat 3">
+    </div>
+
+    <div class="product-info">
+
+      <h1 class="product-title">Faux Fur Coat</h1>
+      <p class="product-price">$29.99</p>
+      <p class="product-description">
+        Stay warm and stylish with our luxurious faux fur coat. Perfect for layering during colder months. 
+        Made with premium synthetic materials for ultimate comfort.
+      </p>
+
+      <!-- Production & Labor Conditions -->
+      <div class="section" data-aos="fade-up">
+        <h3>TOTALLY ETHICALLY SOURCED</h3>
+        <p>
+          This coat is manufactured in factories across China, Indonesia, and Bangladesh. Workers often earn as little as <strong>$68/month</strong>—about <strong>$2.27/day</strong>—while working <strong>14–16 hour shifts</strong> in poorly ventilated conditions, exposed to harmful chemicals and unsafe environments.
+        </p>
+        <p>
+          Despite the massive profits of the fashion industry, <strong>less than 2% of garment workers worldwide earn a living wage</strong>.
+        </p>
+      </div>
+
+      <!-- Materials & Chemicals -->
+      <div class="section" data-aos="fade-up">
+        <h3>HIGHEST QUALITY MATERIALS GUARANTEED</h3>
+        <canvas id="materialsChart"></canvas>
+        <p>
+          This faux fur coat is made from a synthetic blend of <strong>85% polyester</strong>, <strong>10% acrylic</strong>, and <strong>5% other synthetics</strong>—all derived from petroleum.
+          These fabrics are <strong>non-biodegradable</strong> and shed up to <strong>700,000 microplastic fibers</strong> per wash cycle.
+        </p>
+        <p>
+          Chemical treatments include <strong>formaldehyde-based resins</strong>, <strong>azo dyes</strong>, and <strong>flame retardants</strong>—linked to skin irritation, respiratory issues, and long-term health risks.
+        </p>
+        <p><strong>Textile dyeing is the second-largest water polluter globally.</strong></p>
+      </div>
+
+      <!-- Environmental Impact -->
+      <div class="section" data-aos="fade-up">
+        <h3>A LASTING ENVIRONMENTAL IMPACT!</h3>
+        <ul>
+          <li>Production consumes over <strong>2,000 liters of water</strong> (equivalent to 3 years of drinking water)</li>
+          <li>Generates <strong>15.2 kg of CO₂ emissions</strong> (similar to driving 68 km)</li>
+          <li>Shipped 8,500 miles by cargo ship and truck, adding <strong>5.2 kg of CO₂</strong> per garment</li>
+          <li><strong>92 million tons</strong> of textile waste are generated annually</li>
+        </ul>
+        <p><strong>Fashion contributes 10% of global CO₂ emissions and more than international flights + maritime shipping combined.</strong></p>
+      </div>
+
+      <!-- Waste & Lifespan -->
+      <div class="section" data-aos="fade-up">
+        <h3>WASTE & LIFESPAN</h3>
+        <p>
+          The average fast fashion item is worn only <strong>7–10 times</strong> before being discarded. This polyester-based coat will take over <strong>200 years to decompose</strong> in a landfill.
+        </p>
+        <p><strong>Consumers today buy 60% more clothing but keep them for half as long as 15 years ago.</strong></p>
+      </div>
+
+      <!-- Trade-Off Comparator -->
+      <div class="dropdown-compare">
+        <label for="factorA">I prioritize:</label>
+        <select id="factorA">
+          <option value="quantity">Quantity</option>
+          <option value="price">Low Price</option>
+          <option value="trend">Trendiness</option>
+        </select>
+
+        <label for="factorB">But I also care about:</label>
+        <select id="factorB">
+          <option value="ethics">Ethical Production</option>
+          <option value="quality">High Quality</option>
+          <option value="materials">Sustainable Materials</option>
+        </select>
+      </div>
+
+      <p id="comparisonSummary" class="comparison-summary"></p>
+
+      <!-- Ready to Buy Section with Button -->
+      <div class="section" data-aos="fade-up">
+        <h3>🛒 READY TO BUY???!!</h3>
+        <p>
+          This coat may look like a great deal, but the true cost is paid by garment workers, the environment, and your future. 
+          Are you still ready to add it to your cart?
+        </p>
+        <button class="buy-now-btn" onclick="scrollToTrueCost()">Buy Now!!!</button>
+      </div>
+
+      <!-- True Cost Breakdown -->
+      <div class="section" id="true-cost" data-aos="fade-up">
+        <h3>TRUE COST BREAKDOWN</h3>
+        <p>
+          Based on current industry data, the hidden societal and environmental costs of this coat far exceed its sticker price:
+        </p>
+
+        <label class="switch-label">
+          <input type="checkbox" id="compareSwitch">
+          <span class="switch-slider"></span>
+          Compare with sustainable brand
+        </label>
+
+        <div class="cost-breakdown" id="costTable">
+          <div class="cost-row">
+            <span>Listed Price:</span>
+            <span>$29.99</span>
+          </div>
+          <div class="cost-row ethical-cost">
+            <span>
+              Environmental Cost
+              <span class="tooltip-icon" data-tooltip="Includes CO₂ emissions, water use, and landfill waste. Based on UNEP & NRDC data.">ℹ️</span>:
+            </span>
+            <span>+$18.50</span>
+          </div>
+          <div class="cost-row ethical-cost">
+            <span>
+              Fair Labor Cost
+              <span class="tooltip-icon" data-tooltip="Estimated uplift needed for a living wage, based on Clean Clothes Campaign data.">ℹ️</span>:
+            </span>
+            <span>+$15.75</span>
+          </div>
+          <div class="cost-row ethical-cost">
+            <span>
+              Health & Pollution Cost
+              <span class="tooltip-icon" data-tooltip="Covers societal costs from chemical exposure and dye runoff. WHO & NRDC sources.">ℹ️</span>:
+            </span>
+            <span>+$12.25</span>
+          </div>
+          <div class="cost-row total">
+            <span>Estimated Real Cost:</span>
+            <span class="real-cost">$76.49</span>
+          </div>
+        </div>
+
+        <div class="cost-breakdown hidden" id="sustainableTable">
+          <div class="cost-row">
+            <span>Listed Price:</span>
+            <span>$58.00</span>
+          </div>
+          <div class="cost-row ethical-cost">
+            <span>
+              Environmental Cost
+              <span class="tooltip-icon" data-tooltip="Reduced water use, organic materials, and lower CO₂ emissions.">ℹ️</span>:
+            </span>
+            <span>+$5.00</span>
+          </div>
+          <div class="cost-row ethical-cost">
+            <span>
+              Fair Labor Cost
+              <span class="tooltip-icon" data-tooltip="Already included in pricing — workers paid living wages.">ℹ️</span>:
+            </span>
+            <span>$0.00</span>
+          </div>
+          <div class="cost-row ethical-cost">
+            <span>
+              Health & Pollution Cost
+              <span class="tooltip-icon" data-tooltip="Minimal due to use of non-toxic dyes and clean water practices.">ℹ️</span>:
+            </span>
+            <span>+$2.50</span>
+          </div>
+          <div class="cost-row total">
+            <span>Estimated Real Cost:</span>
+            <span class="real-cost">$65.50</span>
+          </div>
+        </div>
+
+        <p class="note">
+          Sources: UNEP, NRDC, WHO, Clean Clothes Campaign, and sustainable apparel lifecycle analyses.
+        </p>
+      </div>
+
+      <!-- Research Findings Summary -->
+      <div class="section" data-aos="fade-up">
+        <h3>📊 USER RESEARCH FINDINGS (n = 12)</h3>
+        <p>
+          My usability and survey research revealed important insights into how everyday consumers perceive and engage with sustainable fashion.
+        </p>
+
+        <h4>Awareness & Understanding</h4>
+        <p>
+          While <strong>83%</strong> of users associated sustainable fashion with environmental and ethical values, <strong>42%</strong> admitted they were unsure what actually qualifies as “sustainable.” This gap reflects a need for clearer definitions and better education on what sustainability truly entails.
+        </p>
+
+        <h4>Willingness to Pay</h4>
+        <div style="width: 300px; margin: 0 auto;">
+          <canvas id="payChart"></canvas>
+        </div>
+
+        <p>
+          <strong>75%</strong> of participants were open to paying more for a sustainably made $30 shirt. 
+          Of those, most were willing to pay between <strong>$1–$10 extra</strong>, citing <strong>better quality (83%)</strong> and <strong>ethical labor (58%)</strong> as key justifications.
+        </p>
+
+        <h4>Shopping Priorities</h4>
+        <p>
+          The most important factors when shopping were:
+          <strong>Affordability (83%)</strong>, <strong>Quality (75%)</strong>, and <strong>Style/Trendiness (58%)</strong>.
+          Despite good intentions, <strong>58%</strong> primarily shopped fast fashion, and only <strong>17%</strong> actively prioritized sustainable brands.
+        </p>
+
+        <h4>Spending Behavior</h4>
+        <p>
+          Most users (<strong>67%</strong>) only considered sustainability <em>sometimes</em> while shopping. While <strong>83%</strong> said they would avoid unethical brands, this behavior was mostly <em>reactive</em> — prompted by exposure rather than proactive habits.
+        </p>
+        <p>
+          Additionally, <strong>50%</strong> reported trying to balance price and quality, and <strong>33%</strong> admitted to impulse buying when presented with sales or trendy items.
+        </p>
+
+        <p class="note">
+          These findings were gathered through user interviews and online surveys conducted with 12 participants as part of a capstone research study on fast fashion behavior and perception.
+        </p>
+      </div>
+
+      </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-section">
+      <h4>About</h4>
+      <ul>
+        <li>Our Story</li>
+        <li>Mission</li>
+        <li>Team</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Support</h4>
+      <ul>
+        <li>Contact Us</li>
+        <li>Returns</li>
+        <li>Shipping Info</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Follow</h4>
+      <ul>
+        <li>Instagram</li>
+        <li>Twitter</li>
+        <li>TikTok</li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      MADE BY KIM LUONG | DES 157 – CAPSTONE PROJECT | SPRING 2025
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
