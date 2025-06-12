@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Case Study - Your Favorite Fast Fashion Brand</title>
+
+    <!--/ /-------- Normalize CSS --------/ /-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+	
+	<!--/ /-------- Google Fonts --------/ /-->
+    <!-- add any google fonts you want to use -->
+	
+	<!--/ /-------- Font Awesome --------/ /-->
+    <!--Add this if you want icons from font awesome
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+	
+	<!--/ /-------- Your Styles --------/ /-->
+	<link href="styles.css" rel="stylesheet">
+	
+	<!--/ /-------- Needed For Mobile Devices --------/ /-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header id="top">
+        <div class="container">
+            <h1>UX/UI Case Study - Your Favorite Fast Fashion Brand</h1>
+            <p>Kim Luong</p>
+            <address>            contact: <a href="mailto:&#107;&#105;&#108;&#117;&#111;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">&#107;&#105;&#108;&#117;&#111;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;</a></address>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#overview">overview</a></li>
+            <li><a href="#research">research</a></li>
+            <li><a href="#design">design</a></li>
+            <li><a href="#ui">user interface</a></li>
+            <li><a href="#revisions">revisions</a></li>
+            <li><a href="#summary">summary</a></li>
+        </ul>
+    </nav>
+
+    <!--/ /-------- Overview Section --------/ /-->
+    <section id="overview">
+        <div class="container">
+            <h2>Project Overview</h2>
+            <img src="images/website.png">
+            <div class="content">
+                <p>This project centers on an interactive digital experience that parodies fast fashion e-commerce platforms to reveal the environmental and ethical costs hidden beneath the surface of everyday shopping. Framed as a seemingly playful and familiar online store, the website mimics the aesthetic and UX patterns of popular retailers such as SHEIN, H&M, Lewkin, and Zara. However, instead of encouraging purchases, it gradually shifts the user's attention to the darker truths behind where clothing is sourced, the materials used, and the long-term impact of the fashion industry on people and the planet.</p>
+
+                <p>The site introduces users to a drag-and-drop interaction where they can place clothing items onto a central avatar. Upon doing so, users are met with a breakdown of that item’s lifecycle—from its country of origin to the labor conditions behind its production, and finally, to its environmental footprint.</p>
+                    
+                <p>A “Ready to Buy?” button then presents a twist, redirecting the user to a true cost analysis that contrasts the fast fashion item with a more sustainable alternative. This side-by-side comparison is designed to prompt reflection and reveal how affordability, convenience, and style often come at an unseen cost.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--/ /-------- UX Research Section --------/ /-->
+    <section id="research">
+        <div class="container">
+            <h2>Project Research</h2>
+            <div class="content">
+                <p>The foundation of the project was built on a blend of qualitative user interviews and a detailed literature review. Research revealed that while most participants expressed theoretical support for sustainability, few had the vocabulary, brand awareness, or purchasing behaviors to match that support. In interviews, users often associated sustainable fashion with vague ideas like eco-friendliness and fair labor practices, yet only a small number could name a sustainable brand or describe specific criteria that define ethical production.</p>
+
+                <p>Affordability, aesthetic appeal, and ease of access were the primary drivers behind most purchasing decisions. Even those who expressed concern about fast fashion admitted they rarely let it influence their buying habits unless prompted by a major event, such as a news article or viral scandal. Literature findings further confirmed the real-world stakes—exposing how fast fashion contributes to high levels of carbon emissions, water waste, microplastic pollution, and unethical labor practices, including child labor and wage theft. These insights collectively informed the tone, structure, and interactive choices of the project.</p>
+
+                <img src="images/insights.png">
+            </div>
+        </div>
+    </section>
+
+    <!--/ /-------- Design Section --------/ /-->
+    <section id="design">
+        <div class="container">
+            <h2>Visual Design</h2>
+            <div class="content">
+                <img src="images/zara.png">
+                <p>In designing the site’s visual identity, I drew directly from the aesthetics of mainstream fast fashion websites. The intention was to create something that looked familiar and trendy—mirroring the slick, minimalist layouts, bold promotional graphics, and scrollable interfaces users would expect from brands like Forever 21 or Hollister. This design choice served a dual purpose: to immediately capture the user’s attention through recognizability and to create a sense of unease when the underlying messages began to subvert that initial expectation. Bright imagery, playful type, and sleek UI components lured users in—but what followed challenged them to reconsider what they were engaging with.</p>
+
+                <p>Despite the effectiveness of the parody, usability testing later revealed that the visuals sometimes softened the seriousness of the issues being presented. While users appreciated the humor and creativity, they noted that the tone occasionally lacked emotional depth, especially when addressing topics like labor exploitation and environmental degradation. Based on this, future iterations will integrate more emotionally resonant imagery—such as stylized silhouettes of factory workers or overlays of environmental damage—to better bridge the gap between aesthetic appeal and ethical critique.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--/ /-------- UI Section --------/ /-->
+    <section id="ui">
+        <div class="container">
+            <h2>User Interface</h2>
+            <div class="content">
+                    <p>The central interaction of the site invites users to drag and drop clothing items onto a stylized avatar. This action triggers a sequence of information, walking the user through where that item comes from, how it was made, and the toll it takes on the environment. Once completed, the “Ready to Buy?” button flips expectations by presenting a true cost breakdown that compares the fast fashion item with a sustainable alternative. Early versions of the experience struggled with interaction clarity. Users frequently skipped or dismissed the welcome overlay and were unsure how to begin. Some hesitated, not realizing the items were draggable, while others expected the information shown to change based on their selections—but were instead met with generic content.</p>
+
+                    <p>These issues informed a series of critical updates. I enhanced the onboarding experience by introducing subtle visual cues, such as pulsing animations around the avatar and glowing highlights on clothing items. More importantly, I implemented dynamic content updates tied to each specific item. Now, when a user selects a shirt or dress, the site presents sourcing, labor, and environmental information specific to that product, helping create a more coherent and meaningful interaction sequence.</p>
+                </div>
+            </div>
+    </section>
+
+    <!--/ /-------- Revisions Section --------/ /-->
+    <section id="revisions">
+        <div class="container">
+            <h2>Revisions</h2>
+            <div class="content">
+                <p>User feedback played a significant role in refining the site’s interaction design and narrative structure. The original version featured a mostly linear experience, with users progressing through steps that didn’t always feel directly connected to their choices. The drag-and-drop mechanic was well-received, but users wanted the consequences of their actions to feel more specific and personalized. In response, I made the experience more reactive. Each item dropped onto the avatar now updates the page with tailored information about that product, its materials, and the conditions under which it was produced. To ensure users clearly understand how to interact, I also revised the onboarding process to include visual prompts that continue even after the initial overlay is dismissed.</p>
+
+                <p>In terms of emotional resonance, the first iteration was visually clever but lacked weight. Many users mentioned that while the experience was thought-provoking, it didn’t quite hit them emotionally. To address this, I began incorporating more serious visuals and considered ambient transitions—such as fading in disturbing facts after each interaction—to build tension more deliberately. There is also potential to explore sound design and storytelling vignettes to further deepen the emotional impact.</p>
+
+                <img src="images/usability.png">
+            </div>
+        </div>
+    </section>
+
+    <!--/ /-------- Summary Section --------/ /-->
+    <section id="summary">
+        <div class="container">
+            <h2>Summary</h2>
+            <div class="content">
+                <p>This interactive parody aims to challenge how users engage with fashion by transforming a familiar shopping experience into a reflection on consumer responsibility. By using satire, interactivity, and design patterns drawn from real-world fast fashion brands, the site prompts users to question the true cost of the clothing they wear.</p>
+
+                <p>The project highlights a critical gap between user intent and user behavior. While many people express support for sustainable fashion, their actual decisions are shaped by convenience, price, and aesthetics. This experience attempts to bridge that gap—first by meeting users where they are, and then gradually guiding them toward awareness and reflection through engaging interaction and informative design.</p>
+
+                <p>In its current form, the project offers a strong foundation for further development. Future iterations may include deeper personalization, emotional storytelling, and more immersive feedback to help users not only understand the consequences of their choices but to feel them. Ultimately, the goal is to make sustainable thinking not just accessible—but compelling, stylish, and as intuitive as shopping fast fashion has become.</p>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>UX/UI Case - Your Favorite Fast Fashion Brand</p>
+            <p>Kim Luong</p>
+            <address>            contact: <a href="mailto:&#107;&#105;&#108;&#117;&#111;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">&#107;&#105;&#108;&#117;&#111;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;</a></address>
+            <p><a href="#top">top</a></p>
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,95 @@
+/* CSS Resets */
+h1, h2, h3, h4, p, nav ul {
+    padding: 0;
+    margin: 0;
+}
+nav ul {
+    list-style-type: none;
+}
+img { max-width: 100%; display: block; }
+* { box-sizing: border-box; }
+
+/* end Resets */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2c2c2c;
+    background-color: #ffffff;
+}
+
+nav {
+    border-top: 2px solid #dcdcdc;
+    background-color: #ffffff;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    color: #1e90ff;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc;
+    text-align: center;
+    padding: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #eef6fc;
+}
+
+header, footer {
+    background-color: #f0f2f5;
+}
+
+header, section, footer {
+    padding: 20px;
+}
+
+section:nth-child(even){
+    background-color: #f5f7fa;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+h1, h2 {
+    margin-bottom: .5em;
+    color: #1a1a1a;
+}
+
+p {
+    line-height: 1.4em;
+    margin-bottom: 1em;
+}
+
+ol li {
+    margin-bottom: 1em;
+}
+
+img {
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+@media only screen and (min-width: 768px) {
+    nav ul { display: flex; }
+    nav ul li { flex: 1; }
+}
+
+@media only screen and (min-width: 1000px) {
+    .container{ margin: auto; }
+    nav ul {
+        max-width: 1000px;
+        margin: auto;
+    }
+    .content { 
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
